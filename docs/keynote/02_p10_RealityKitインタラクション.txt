@@ -1,0 +1,12 @@
+RealityKit インタラクション
+
+InputTargetComponent
+　タップ/ドラッグ入力受付に必須
+
+HoverEffectComponent
+　ホバー時のハイライト
+
+ManipulationComponent（WWDC25）
+　掴む、移動操作
+
+※タップ可能にするには InputTarget + Collision が必要

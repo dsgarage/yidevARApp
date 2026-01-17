@@ -1,0 +1,15 @@
+SceneKit vs RealityKit
+
+【SceneKit】
+　登場：iOS 8（2014）
+　SwiftUI統合：△（UIViewRepresentable経由）
+　visionOS：非対応
+　学習曲線：緩やか
+
+【RealityKit】
+　登場：iOS 13（2019）
+　SwiftUI統合：○（RealityView）
+　visionOS：対応
+　学習曲線：やや急
+
+→ 新規プロジェクトはRealityKit推奨

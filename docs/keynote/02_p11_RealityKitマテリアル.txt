@@ -1,0 +1,16 @@
+RealityKit マテリアル
+
+SimpleMaterial
+　基本PBR（color, roughness, isMetallic）
+
+UnlitMaterial
+　ライティング無視、常に同じ明るさ
+
+PhysicallyBasedMaterial
+　詳細PBR、全パラメータ対応
+
+VideoMaterial
+　動画テクスチャ（AVPlayer統合）
+
+OcclusionMaterial
+　透明だが遮蔽する

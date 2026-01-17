@@ -1,0 +1,10 @@
+ARKit 顔/ボディトラッキング
+
+顔トラッキング（TrueDepth搭載機）
+　ARFaceTrackingConfiguration
+　52種類のBlendShapes（表情パラメータ）
+　最大3人同時追跡
+
+ボディトラッキング（A12+チップ）
+　ARBodyTrackingConfiguration
+　91ジョイントの全身モーションキャプチャ

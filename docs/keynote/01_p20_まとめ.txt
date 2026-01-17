@@ -1,0 +1,11 @@
+まとめ
+
+ARは現実世界にデジタル情報を重ね合わせる技術
+
+AppleはARを超えた「Spatial Computing」を提唱
+Vision Proで空間コンピューティング時代へ
+
+iOS AR開発のポイント：
+　RealityKitを使用（SwiftUI統合、visionOS対応）
+　ARKitで検出機能を活用
+　実機でのテストが必須

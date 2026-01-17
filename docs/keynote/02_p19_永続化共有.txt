@@ -1,0 +1,13 @@
+AR体験の永続化/共有
+
+ARWorldMap
+　AR空間の保存、復元（同じ場所での再開）
+
+Collaborative Session
+　複数デバイスでAR共有（リアルタイム同期）
+
+MultipeerConnectivity
+　P2Pネットワーク通信
+
+SharePlay
+　FaceTime中のAR共有（visionOS/iOS対応）

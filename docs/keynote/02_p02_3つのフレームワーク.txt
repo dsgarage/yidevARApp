@@ -1,0 +1,10 @@
+iOS AR開発の3つのフレームワーク
+
+ARKit
+　AR機能の基盤（トラッキング、検出）
+
+RealityKit
+　3Dレンダリング、物理演算、SwiftUI統合
+
+SceneKit
+　レガシー3Dフレームワーク（iOS 8〜）

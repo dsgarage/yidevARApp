@@ -1,0 +1,11 @@
+Info.plistの設定
+
+MultipeerConnectivityを使用するには
+Info.plistに以下を追加：
+
+NSLocalNetworkUsageDescription
+　「近くのデバイスとAR体験を共有するために使用します」
+
+NSBonjourServices
+　_ar-collab._tcp
+　_ar-collab._udp

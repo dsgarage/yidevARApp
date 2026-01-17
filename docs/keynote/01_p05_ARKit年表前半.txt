@@ -1,0 +1,7 @@
+iOSにおけるAR開発の歴史（2017-2020）
+
+2017年：ARKit 1.0（iOS 11）- 平面検出、照明推定
+2018年：ARKit 2.0 - 共有体験、画像トラッキング
+2019年：ARKit 3.0 - People Occlusion、モーションキャプチャ
+2019年：RealityKit登場 - 高レベルAR開発フレームワーク
+2020年：ARKit 4.0 - LiDARサポート、Location Anchors

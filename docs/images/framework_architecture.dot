@@ -1,0 +1,97 @@
+digraph FrameworkArchitecture {
+    rankdir=TB;
+    splines=ortho;
+    nodesep=0.4;
+    ranksep=0.6;
+
+    // Graph styling
+    graph [
+        fontname="Helvetica Neue"
+        bgcolor="white"
+        pad=0.5
+    ];
+
+    node [
+        fontname="Helvetica Neue"
+        fontsize=12
+        shape=box
+        style="filled,rounded"
+        margin="0.3,0.2"
+    ];
+
+    edge [
+        color="#94a3b8"
+        penwidth=1.5
+    ];
+
+    // Application layer
+    app [
+        label="アプリケーション"
+        fillcolor="#f8fafc"
+        color="#64748b"
+        fontcolor="#334155"
+        width=6
+    ];
+
+    // High-level frameworks - same rank
+    subgraph cluster_highlevel {
+        style=invis;
+        rank=same;
+
+        realitykit [
+            label="RealityKit\n（推奨・高レベル）"
+            fillcolor="#dbeafe"
+            color="#2563eb"
+            fontcolor="#1e40af"
+            width=2
+        ];
+
+        scenekit [
+            label="SceneKit\n（レガシー）"
+            fillcolor="#fef3c7"
+            color="#f59e0b"
+            fontcolor="#92400e"
+            width=2
+        ];
+
+        metal [
+            label="Metal/その他\n（低レベル）"
+            fillcolor="#f3e8ff"
+            color="#9333ea"
+            fontcolor="#6b21a8"
+            width=2
+        ];
+    }
+
+    // ARKit layer
+    arkit [
+        label="ARKit\n（AR基盤フレームワーク）"
+        fillcolor="#dcfce7"
+        color="#22c55e"
+        fontcolor="#166534"
+        width=6
+    ];
+
+    // AVFoundation layer
+    avfoundation [
+        label="AVFoundation\n（カメラ・センサー）"
+        fillcolor="#fce7f3"
+        color="#ec4899"
+        fontcolor="#9d174d"
+        width=6
+    ];
+
+    // Edges
+    app -> realitykit [weight=10];
+    app -> scenekit [weight=10];
+    app -> metal [weight=10];
+
+    realitykit -> arkit;
+    scenekit -> arkit;
+    metal -> arkit;
+
+    arkit -> avfoundation;
+
+    // Invisible edges to maintain alignment
+    {rank=same; realitykit; scenekit; metal}
+}

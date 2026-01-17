@@ -1,0 +1,71 @@
+digraph SpatialComputingArchitecture {
+    rankdir=TB;
+    node [fontname="Helvetica"];
+    graph [fontname="Helvetica", bgcolor="white", pad="0.5"];
+    compound=true;
+
+    // Title
+    title [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><FONT POINT-SIZE="20"><B>Spatial Computing アーキテクチャ</B></FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="12" COLOR="#666666">iOS/iPadOSスキルが活かせる構造</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Spatial Computing outer layer
+    subgraph cluster_spatial {
+        label=<<FONT POINT-SIZE="16"><B>Spatial Computing</B></FONT>>;
+        style=rounded;
+        bgcolor="#E6FFFA";
+        color="#319795";
+        penwidth=3;
+
+        // visionOS layer
+        subgraph cluster_visionos {
+            label=<<FONT POINT-SIZE="14"><B>visionOS</B></FONT>>;
+            style=rounded;
+            bgcolor="#EBF8FF";
+            color="#3182CE";
+            penwidth=2;
+
+            // Frameworks row
+            arkit [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#4299E1">
+                <TR><TD><FONT COLOR="white" POINT-SIZE="14"><B>ARKit</B></FONT></TD></TR>
+                <TR><TD><FONT COLOR="white" POINT-SIZE="10">平面検出・トラッキング</FONT></TD></TR>
+            </TABLE>>, shape=none];
+
+            realitykit [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#48BB78">
+                <TR><TD><FONT COLOR="white" POINT-SIZE="14"><B>RealityKit</B></FONT></TD></TR>
+                <TR><TD><FONT COLOR="white" POINT-SIZE="10">3Dレンダリング・物理演算</FONT></TD></TR>
+            </TABLE>>, shape=none];
+
+            // UI Framework
+            swiftui [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#9F7AEA">
+                <TR><TD><FONT COLOR="white" POINT-SIZE="14"><B>SwiftUI / UIKit</B></FONT></TD></TR>
+                <TR><TD><FONT COLOR="white" POINT-SIZE="10">ユーザーインターフェース</FONT></TD></TR>
+            </TABLE>>, shape=none];
+
+            // Invisible edges for layout within cluster
+            arkit -> realitykit [style=invis, weight=10];
+            arkit -> swiftui [style=invis];
+            realitykit -> swiftui [style=invis];
+        }
+    }
+
+    // iOS/iPadOS skills
+    ios_skills [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#FED7E2" COLOR="#D53F8C">
+        <TR><TD><FONT POINT-SIZE="14" COLOR="#702459"><B>iOS / iPadOS 開発スキル</B></FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="11" COLOR="#702459">Swift, SwiftUI, UIKit, ARKit, RealityKit</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Layout
+    title -> arkit [style=invis, lhead=cluster_spatial];
+
+    // Arrow showing skill transfer
+    ios_skills -> swiftui [
+        xlabel=<<FONT POINT-SIZE="11" COLOR="#D53F8C"><B>スキル移行</B></FONT>>,
+        color="#D53F8C",
+        penwidth=2,
+        style=dashed,
+        dir=back,
+        lhead=cluster_visionos
+    ];
+}

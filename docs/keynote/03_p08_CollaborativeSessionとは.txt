@@ -1,0 +1,12 @@
+Collaborative Sessionとは
+
+ARKit 3.0で導入
+
+複数デバイス間でリアルタイムに
+空間情報を自動同期する機能
+
+ARWorldMapと異なり
+手動でのマップ交換が不要
+
+設定：
+configuration.isCollaborationEnabled = true

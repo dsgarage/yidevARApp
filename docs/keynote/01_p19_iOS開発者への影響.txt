@@ -1,0 +1,9 @@
+iOS開発者への影響
+
+visionOSはiOS/iPadOSアプリとの互換性を重視
+多くのSwiftUI/UIKitアプリはそのままvisionOSで動作
+
+ARKit/RealityKitスキルはvisionOS開発に直接活かせる
+
+今学ぶARKit/RealityKitは
+将来の空間コンピューティング時代への準備となる

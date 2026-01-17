@@ -1,0 +1,46 @@
+digraph TechnicalComparison {
+    rankdir=TB;
+    node [shape=none, fontname="Helvetica"];
+    graph [fontname="Helvetica", bgcolor="white", pad="0.5"];
+
+    title [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><FONT POINT-SIZE="18"><B>技術的な違い</B></FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    tech [label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" BGCOLOR="white">
+            <TR>
+                <TD BGCOLOR="#4A5568" WIDTH="130"><FONT COLOR="white"><B>項目</B></FONT></TD>
+                <TD BGCOLOR="#805AD5" WIDTH="200"><FONT COLOR="white"><B>従来のモバイルAR</B></FONT></TD>
+                <TD BGCOLOR="#38A169" WIDTH="250"><FONT COLOR="white"><B>visionOS / Vision Pro</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>トラッキング</B></TD>
+                <TD BGCOLOR="#E9D8FD">カメラベース</TD>
+                <TD BGCOLOR="#C6F6D5">LiDAR + アイトラッキング<BR/>+ ハンドトラッキング</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>レイテンシ</B></TD>
+                <TD BGCOLOR="#E9D8FD">15-30ms</TD>
+                <TD BGCOLOR="#C6F6D5">8ms<BR/>（visionOS 3以降）</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>入力方式</B></TD>
+                <TD BGCOLOR="#E9D8FD">タップ、スワイプ</TD>
+                <TD BGCOLOR="#C6F6D5">視線 + ピンチジェスチャー</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>空間オーディオ</B></TD>
+                <TD BGCOLOR="#E9D8FD">限定的</TD>
+                <TD BGCOLOR="#C6F6D5">完全な3D空間オーディオ</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>素材感</B></TD>
+                <TD BGCOLOR="#E9D8FD">一般的な2D UI</TD>
+                <TD BGCOLOR="#C6F6D5">Glass Material<BR/>（背景透過）</TD>
+            </TR>
+        </TABLE>
+    >];
+
+    title -> tech [style=invis];
+}

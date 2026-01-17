@@ -1,0 +1,53 @@
+digraph AppleDesignPhilosophy {
+    rankdir=TB;
+    node [fontname="Helvetica"];
+    graph [fontname="Helvetica", bgcolor="white", pad="0.5"];
+
+    // Title
+    title [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><FONT POINT-SIZE="20"><B>Appleの空間コンピューティング設計哲学</B></FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Center node
+    center [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="20" BGCOLOR="#1A202C" COLOR="#1A202C">
+        <TR><TD><FONT COLOR="white" POINT-SIZE="16"><B>Spatial<BR/>Computing</B></FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Four principles
+    human [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#FC8181" COLOR="#C53030" STYLE="rounded">
+        <TR><TD><FONT POINT-SIZE="13"><B>Human-Centered</B></FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="10">人間中心</FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="9" COLOR="#742A2A">目・手・動きが<BR/>インタラクションの中心</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    ergonomics [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#68D391" COLOR="#276749" STYLE="rounded">
+        <TR><TD><FONT POINT-SIZE="13"><B>Ergonomics</B></FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="10">人間工学</FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="9" COLOR="#22543D">首や目の疲労を<BR/>考慮したUI配置</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    familiar [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#63B3ED" COLOR="#2C5282" STYLE="rounded">
+        <TR><TD><FONT POINT-SIZE="13"><B>Familiar + Innovation</B></FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="10">革新と親しみの両立</FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="9" COLOR="#2A4365">2D UIの親しみやすさを<BR/>3D空間に持ち込む</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    immersion [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#B794F4" COLOR="#553C9A" STYLE="rounded">
+        <TR><TD><FONT POINT-SIZE="13"><B>Controlled Immersion</B></FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="10">制御された没入</FONT></TD></TR>
+        <TR><TD><FONT POINT-SIZE="9" COLOR="#44337A">ユーザーが段階的に<BR/>没入度を選択可能</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Layout
+    title -> center [style=invis];
+
+    // Connections
+    center -> human [color="#C53030", penwidth=2];
+    center -> ergonomics [color="#276749", penwidth=2];
+    center -> familiar [color="#2C5282", penwidth=2];
+    center -> immersion [color="#553C9A", penwidth=2];
+
+    // Position
+    {rank=same; human; ergonomics}
+    {rank=same; familiar; immersion}
+}

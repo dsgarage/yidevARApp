@@ -1,0 +1,51 @@
+digraph AR_vs_SpatialComputing {
+    rankdir=TB;
+    node [shape=none, fontname="Helvetica"];
+    graph [fontname="Helvetica", bgcolor="white", pad="0.5"];
+
+    title [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><FONT POINT-SIZE="18"><B>従来のAR vs Apple Spatial Computing 比較</B></FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    comparison [label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="10" BGCOLOR="white">
+            <TR>
+                <TD BGCOLOR="#4A5568" WIDTH="120"><FONT COLOR="white"><B>観点</B></FONT></TD>
+                <TD BGCOLOR="#E53E3E" WIDTH="220"><FONT COLOR="white"><B>従来のAR</B></FONT></TD>
+                <TD BGCOLOR="#3182CE" WIDTH="280"><FONT COLOR="white"><B>Apple Spatial Computing</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>定義</B></TD>
+                <TD BGCOLOR="#FED7D7">現実世界にデジタル情報を<BR/>オーバーレイ</TD>
+                <TD BGCOLOR="#BEE3F8">物理世界とデジタル世界の<BR/>シームレスな融合</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>用語</B></TD>
+                <TD BGCOLOR="#FED7D7">AR, VR, MR, XR</TD>
+                <TD BGCOLOR="#BEE3F8">「Spatial Computing」<BR/>（AR/VR用語を避ける）</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>デバイス</B></TD>
+                <TD BGCOLOR="#FED7D7">スマートフォン<BR/>タブレット</TD>
+                <TD BGCOLOR="#BEE3F8">Vision Pro<BR/>（専用空間コンピュータ）</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>インタラクション</B></TD>
+                <TD BGCOLOR="#FED7D7">タッチ<BR/>コントローラー</TD>
+                <TD BGCOLOR="#BEE3F8">目・手・声<BR/>（自然な人間の動作）</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>没入度</B></TD>
+                <TD BGCOLOR="#FED7D7">画面越しの<BR/>部分的な体験</TD>
+                <TD BGCOLOR="#BEE3F8">完全没入から<BR/>現実透過まで可変</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#EDF2F7"><B>UI配置</B></TD>
+                <TD BGCOLOR="#FED7D7">2D画面上の<BR/>オーバーレイ</TD>
+                <TD BGCOLOR="#BEE3F8">3D空間内に<BR/>自然な距離感で配置</TD>
+            </TR>
+        </TABLE>
+    >];
+
+    title -> comparison [style=invis];
+}

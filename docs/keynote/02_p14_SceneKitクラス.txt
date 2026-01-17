@@ -1,0 +1,9 @@
+SceneKit 主要クラス
+
+SCNScene → RealityKit: Scene
+SCNNode → RealityKit: Entity
+SCNGeometry → RealityKit: MeshResource
+SCNMaterial → RealityKit: Material
+SCNAction → RealityKit: FromToByAnimation
+SCNPhysicsBody → RealityKit: PhysicsBodyComponent
+SCNParticleSystem → RealityKit: ParticleEmitterComponent

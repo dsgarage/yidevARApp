@@ -1,0 +1,13 @@
+Appleの空間コンピューティング設計哲学
+
+Human-Centered（人間中心）
+　目、手、動きがインタラクションの中心
+
+Ergonomics（人間工学）
+　疲労を考慮したUI配置
+
+Familiar + Innovation（革新と親しみの両立）
+　2D UIの親しみやすさを3D空間に
+
+Controlled Immersion（制御された没入）
+　段階的に没入度を選択可能

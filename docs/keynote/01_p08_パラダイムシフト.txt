@@ -1,0 +1,8 @@
+従来のARからSpatial Computingへ
+
+Appleは「AR/VR/MR」という用語を使わず
+「Spatial Computing（空間コンピューティング）」を提唱
+
+Mac → パーソナルコンピューティング
+iPhone → モバイルコンピューティング
+Vision Pro → 空間コンピューティング

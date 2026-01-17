@@ -1,0 +1,10 @@
+ARWorldMapの状態
+
+worldMappingStatusで確認
+
+notAvailable：マッピング不可
+limited：限定的なマッピング中
+extending：マッピング拡張中
+mapped：マッピング完了
+
+mappedになってから共有を実行

@@ -1,0 +1,12 @@
+共有ARアプリ実装の流れ
+
+1. MultipeerConnectivityでデバイス接続
+
+2. Collaborative Sessionを有効化
+　configuration.isCollaborationEnabled = true
+
+3. 協調データの送受信
+　didOutputCollaborationData → 送信
+　update(with:) → 受信データ適用
+
+4. アンカー/オブジェクトの同期

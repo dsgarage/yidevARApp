@@ -1,0 +1,12 @@
+RealityKitとは
+
+AppleのAR向け3Dフレームワーク（iOS 13〜）
+
+特徴：
+　SwiftUIとの統合（RealityView）
+　物理シミュレーション内蔵
+　PBR（物理ベースレンダリング）
+　アニメーションシステム
+　visionOS対応
+
+→ 新規プロジェクトで推奨

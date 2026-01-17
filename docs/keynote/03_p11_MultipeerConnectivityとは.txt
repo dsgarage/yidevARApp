@@ -1,0 +1,10 @@
+MultipeerConnectivityとは
+
+Appleのフレームワーク
+
+Wi-FiやBluetoothを使用して
+近くのデバイスと直接通信
+
+インターネット接続なしで動作
+
+AR共有のデータ送受信に使用

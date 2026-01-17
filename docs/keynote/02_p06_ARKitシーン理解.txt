@@ -1,0 +1,13 @@
+ARKit シーン理解/深度
+
+Scene Geometry（LiDAR搭載機）
+　ARMeshAnchor - 環境の3Dメッシュ生成
+
+Depth API（LiDAR搭載機）
+　ARFrame.sceneDepth - ピクセル単位の深度情報
+
+People Occlusion（A12+チップ）
+　人物による遮蔽処理
+
+Instant AR（LiDAR搭載機）
+　スキャン不要で即座にAR開始

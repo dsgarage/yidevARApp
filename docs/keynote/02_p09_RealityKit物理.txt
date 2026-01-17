@@ -1,0 +1,13 @@
+RealityKit 物理/当たり判定
+
+CollisionComponent
+　当たり判定（box/sphere/convex/mesh）
+
+PhysicsBodyComponent
+　物理演算（dynamic/static/kinematic）
+
+PhysicsMotionComponent
+　速度、角速度制御
+
+CharacterControllerComponent
+　キャラクター移動

@@ -1,0 +1,16 @@
+通信方式の比較
+
+MultipeerConnectivity
+　範囲：ローカル（WiFi/Bluetooth）
+　レイテンシ：低
+　用途：同室でのマルチプレイヤー
+
+CloudKit
+　範囲：グローバル
+　レイテンシ：中〜高
+　用途：場所に固定されたAR体験の共有
+
+SharePlay
+　範囲：FaceTime参加者
+　レイテンシ：低〜中
+　用途：リモートでの協調作業

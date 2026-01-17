@@ -1,0 +1,16 @@
+まとめ
+
+ARKit
+　AR機能の基盤（トラッキング、検出、深度）
+
+RealityKit
+　3Dレンダリング、物理演算
+　SwiftUI/visionOS対応
+　→ 新規開発で推奨
+
+SceneKit
+　レガシー3D、既存資産がある場合に選択
+
+フレームワーク選択のポイント：
+　visionOS対応が必要 → RealityKit
+　既存SceneKitコードがある → SceneKit継続も可

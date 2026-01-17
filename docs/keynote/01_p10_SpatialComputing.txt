@@ -1,0 +1,7 @@
+Apple Spatial Computing
+
+定義：物理世界とデジタル世界のシームレスな融合
+用語：Spatial Computing（AR/VR用語を避ける）
+デバイス：Vision Pro（専用空間コンピュータ）
+インタラクション：目、手、声（自然な人間の動作）
+没入度：完全没入から現実透過まで可変

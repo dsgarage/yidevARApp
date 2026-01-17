@@ -1,0 +1,13 @@
+RealityKit 4 / WWDC25 新機能
+
+Portal
+　異なる空間への「窓」を作成
+
+SpatialTrackingSession
+　RealityKitから直接ARKitデータにアクセス
+
+EnvironmentBlendingComponent
+　現実世界オブジェクトによるオクルージョン
+
+MeshInstancesComponent
+　大量オブジェクトを効率的に描画

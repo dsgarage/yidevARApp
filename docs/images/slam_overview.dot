@@ -1,0 +1,88 @@
+digraph SLAMOverview {
+    rankdir=LR;
+    node [fontname="Helvetica"];
+    graph [fontname="Helvetica", bgcolor="white", pad="0.5"];
+
+    // Title
+    title [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><FONT POINT-SIZE="18"><B>ARの動作原理: Visual-Inertial Odometry</B></FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Input sensors
+    subgraph cluster_input {
+        label=<<FONT POINT-SIZE="12"><B>入力センサー</B></FONT>>;
+        style=rounded;
+        bgcolor="#EBF8FF";
+        color="#3182CE";
+
+        camera_input [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="10" BGCOLOR="#4299E1">
+            <TR><TD><FONT COLOR="white" POINT-SIZE="11"><B>カメラ</B></FONT></TD></TR>
+            <TR><TD><FONT COLOR="#BEE3F8" POINT-SIZE="9">映像フレーム</FONT></TD></TR>
+        </TABLE>>, shape=none];
+
+        imu [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="10" BGCOLOR="#4299E1">
+            <TR><TD><FONT COLOR="white" POINT-SIZE="11"><B>IMU</B></FONT></TD></TR>
+            <TR><TD><FONT COLOR="#BEE3F8" POINT-SIZE="9">加速度・ジャイロ</FONT></TD></TR>
+        </TABLE>>, shape=none];
+
+        lidar [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="10" BGCOLOR="#4299E1">
+            <TR><TD><FONT COLOR="white" POINT-SIZE="11"><B>LiDAR</B></FONT></TD></TR>
+            <TR><TD><FONT COLOR="#BEE3F8" POINT-SIZE="9">深度データ（Pro機種）</FONT></TD></TR>
+        </TABLE>>, shape=none];
+    }
+
+    // Processing
+    subgraph cluster_process {
+        label=<<FONT POINT-SIZE="12"><B>処理</B></FONT>>;
+        style=rounded;
+        bgcolor="#FEFCBF";
+        color="#D69E2E";
+
+        feature [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="10" BGCOLOR="#ECC94B">
+            <TR><TD><FONT POINT-SIZE="11"><B>特徴点抽出</B></FONT></TD></TR>
+            <TR><TD><FONT POINT-SIZE="9">コーナー・エッジ検出</FONT></TD></TR>
+        </TABLE>>, shape=none];
+
+        tracking [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="10" BGCOLOR="#ECC94B">
+            <TR><TD><FONT POINT-SIZE="11"><B>特徴点追跡</B></FONT></TD></TR>
+            <TR><TD><FONT POINT-SIZE="9">フレーム間マッチング</FONT></TD></TR>
+        </TABLE>>, shape=none];
+
+        fusion [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="10" BGCOLOR="#ECC94B">
+            <TR><TD><FONT POINT-SIZE="11"><B>センサー融合</B></FONT></TD></TR>
+            <TR><TD><FONT POINT-SIZE="9">視覚 + 慣性データ統合</FONT></TD></TR>
+        </TABLE>>, shape=none];
+    }
+
+    // Output
+    subgraph cluster_output {
+        label=<<FONT POINT-SIZE="12"><B>出力</B></FONT>>;
+        style=rounded;
+        bgcolor="#C6F6D5";
+        color="#38A169";
+
+        pose [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="10" BGCOLOR="#48BB78">
+            <TR><TD><FONT COLOR="white" POINT-SIZE="11"><B>デバイス姿勢</B></FONT></TD></TR>
+            <TR><TD><FONT COLOR="#C6F6D5" POINT-SIZE="9">位置 + 回転（6DoF）</FONT></TD></TR>
+        </TABLE>>, shape=none];
+
+        map [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="10" BGCOLOR="#48BB78">
+            <TR><TD><FONT COLOR="white" POINT-SIZE="11"><B>環境マップ</B></FONT></TD></TR>
+            <TR><TD><FONT COLOR="#C6F6D5" POINT-SIZE="9">3D点群・平面</FONT></TD></TR>
+        </TABLE>>, shape=none];
+    }
+
+    // Edges
+    camera_input -> feature [penwidth=2, color="#718096"];
+    imu -> fusion [penwidth=2, color="#718096"];
+    lidar -> fusion [penwidth=2, color="#718096", style=dashed];
+    feature -> tracking [penwidth=2, color="#718096"];
+    tracking -> fusion [penwidth=2, color="#718096"];
+    fusion -> pose [penwidth=2, color="#718096"];
+    fusion -> map [penwidth=2, color="#718096"];
+
+    // Layout
+    {rank=same; camera_input; imu; lidar}
+    {rank=same; feature; tracking; fusion}
+    {rank=same; pose; map}
+}

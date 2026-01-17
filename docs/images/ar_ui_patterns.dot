@@ -1,0 +1,122 @@
+digraph ARUIPatterns {
+    rankdir=LR;
+    splines=true;
+    nodesep=0.8;
+    ranksep=1.2;
+
+    graph [
+        fontname="Helvetica Neue"
+        bgcolor="white"
+        pad=0.5
+        label="AR UIの3つの配置パターン"
+        labelloc="t"
+        fontsize=16
+        fontcolor="#1f2937"
+    ];
+
+    node [
+        fontname="Helvetica Neue"
+        fontsize=11
+        shape=box
+        style="filled,rounded"
+        margin="0.25,0.15"
+    ];
+
+    edge [
+        fontname="Helvetica Neue"
+        fontsize=9
+        color="#94a3b8"
+        penwidth=1.5
+    ];
+
+    // Device/Screen
+    subgraph cluster_device {
+        label="iPhoneデバイス";
+        labelloc="b";
+        style="dashed,rounded";
+        color="#64748b";
+        fontsize=10;
+        fontcolor="#64748b";
+
+        screen [
+            label="Screen-Space UI\n（画面固定）"
+            fillcolor="#dbeafe"
+            color="#2563eb"
+            fontcolor="#1e40af"
+            width=2
+        ];
+    }
+
+    // World
+    subgraph cluster_world {
+        label="3D空間（現実世界）";
+        labelloc="b";
+        style="dashed,rounded";
+        color="#64748b";
+        fontsize=10;
+        fontcolor="#64748b";
+
+        world [
+            label="World-Space UI\n（空間固定）"
+            fillcolor="#dcfce7"
+            color="#22c55e"
+            fontcolor="#166534"
+            width=2
+        ];
+
+        billboard [
+            label="Billboard UI\n（常にカメラを向く）"
+            fillcolor="#fef3c7"
+            color="#f59e0b"
+            fontcolor="#92400e"
+            width=2
+        ];
+    }
+
+    // User
+    user [
+        label="👤\nユーザー"
+        shape=ellipse
+        fillcolor="#f3e8ff"
+        color="#9333ea"
+        fontcolor="#6b21a8"
+        width=1.2
+    ];
+
+    // Relationships
+    user -> screen [label="常に視界内" style=solid];
+    user -> world [label="移動すると\n見えなくなる" style=dashed];
+    user -> billboard [label="常に正面を\n向いて表示" style=solid];
+
+    // Examples
+    screen_ex [
+        label="例: ボタン\n設定パネル"
+        shape=note
+        fillcolor="#f8fafc"
+        color="#cbd5e1"
+        fontsize=9
+        fontcolor="#64748b"
+    ];
+
+    world_ex [
+        label="例: ラベル\nアノテーション"
+        shape=note
+        fillcolor="#f8fafc"
+        color="#cbd5e1"
+        fontsize=9
+        fontcolor="#64748b"
+    ];
+
+    billboard_ex [
+        label="例: 距離表示\n名前タグ"
+        shape=note
+        fillcolor="#f8fafc"
+        color="#cbd5e1"
+        fontsize=9
+        fontcolor="#64748b"
+    ];
+
+    screen -> screen_ex [style=dotted arrowhead=none];
+    world -> world_ex [style=dotted arrowhead=none];
+    billboard -> billboard_ex [style=dotted arrowhead=none];
+}

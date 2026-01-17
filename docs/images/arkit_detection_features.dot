@@ -1,0 +1,163 @@
+digraph ARKitDetection {
+    rankdir=TB;
+    splines=true;
+    nodesep=0.6;
+    ranksep=0.8;
+
+    graph [
+        fontname="Helvetica Neue"
+        bgcolor="white"
+        pad=0.5
+        label="ARKitの検出機能"
+        labelloc="t"
+        fontsize=16
+        fontcolor="#1f2937"
+    ];
+
+    node [
+        fontname="Helvetica Neue"
+        fontsize=11
+        shape=box
+        style="filled,rounded"
+        margin="0.3,0.2"
+    ];
+
+    edge [
+        fontname="Helvetica Neue"
+        fontsize=9
+        color="#94a3b8"
+        penwidth=1.5
+    ];
+
+    // ARKit center
+    arkit [
+        label="ARKit"
+        fillcolor="#1e40af"
+        color="#1e3a8a"
+        fontcolor="white"
+        fontsize=14
+        width=2
+    ];
+
+    // Three main detection features
+    plane [
+        label="平面検出\nPlane Detection"
+        fillcolor="#dcfce7"
+        color="#22c55e"
+        fontcolor="#166534"
+        width=2.2
+    ];
+
+    object [
+        label="オブジェクト検出\nObject Detection"
+        fillcolor="#dbeafe"
+        color="#2563eb"
+        fontcolor="#1e40af"
+        width=2.2
+    ];
+
+    face [
+        label="フェイストラッキング\nFace Tracking"
+        fillcolor="#fce7f3"
+        color="#ec4899"
+        fontcolor="#9d174d"
+        width=2.2
+    ];
+
+    // Details for each
+    plane_h [
+        label="水平面\n床・テーブル"
+        fillcolor="#f0fdf4"
+        color="#86efac"
+        fontcolor="#166534"
+        fontsize=9
+        width=1.5
+    ];
+
+    plane_v [
+        label="垂直面\n壁"
+        fillcolor="#f0fdf4"
+        color="#86efac"
+        fontcolor="#166534"
+        fontsize=9
+        width=1.5
+    ];
+
+    object_scan [
+        label="事前スキャン\n.arobject"
+        fillcolor="#eff6ff"
+        color="#93c5fd"
+        fontcolor="#1e40af"
+        fontsize=9
+        width=1.5
+    ];
+
+    object_detect [
+        label="リアルタイム\n認識"
+        fillcolor="#eff6ff"
+        color="#93c5fd"
+        fontcolor="#1e40af"
+        fontsize=9
+        width=1.5
+    ];
+
+    face_blend [
+        label="BlendShapes\n52種類の表情"
+        fillcolor="#fdf2f8"
+        color="#f9a8d4"
+        fontcolor="#9d174d"
+        fontsize=9
+        width=1.5
+    ];
+
+    face_gaze [
+        label="視線追跡\nGaze Direction"
+        fillcolor="#fdf2f8"
+        color="#f9a8d4"
+        fontcolor="#9d174d"
+        fontsize=9
+        width=1.5
+    ];
+
+    // Hardware requirements
+    hw_rear [
+        label="📷 リアカメラ\n+ LiDAR（オプション）"
+        shape=note
+        fillcolor="#fefce8"
+        color="#fde047"
+        fontcolor="#854d0e"
+        fontsize=9
+    ];
+
+    hw_front [
+        label="📷 TrueDepthカメラ\n（フロント）"
+        shape=note
+        fillcolor="#fefce8"
+        color="#fde047"
+        fontcolor="#854d0e"
+        fontsize=9
+    ];
+
+    // Connections
+    arkit -> plane;
+    arkit -> object;
+    arkit -> face;
+
+    plane -> plane_h;
+    plane -> plane_v;
+
+    object -> object_scan;
+    object -> object_detect;
+
+    face -> face_blend;
+    face -> face_gaze;
+
+    // Hardware connections
+    plane -> hw_rear [style=dashed label="使用"];
+    object -> hw_rear [style=dashed];
+    face -> hw_front [style=dashed label="必須"];
+
+    // Same rank
+    {rank=same; plane; object; face}
+    {rank=same; plane_h; plane_v; object_scan; object_detect; face_blend; face_gaze}
+}

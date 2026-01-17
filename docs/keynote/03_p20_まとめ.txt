@@ -1,0 +1,14 @@
+まとめ
+
+iOS ARKitは、Vision Proのような
+空間共有体験を実現するための強力な機能を提供
+
+【主要ポイント】
+ARWorldMap
+　空間マップの明示的な共有、保存
+
+Collaborative Session
+　自動的なリアルタイム同期
+
+MultipeerConnectivity
+　インターネット不要のP2P通信

@@ -1,0 +1,13 @@
+RealityKit 基本コンポーネント
+
+ModelComponent
+　3Dモデル表示（メッシュ + マテリアル）
+
+Transform
+　位置、回転、スケール（全Entityに自動付与）
+
+AnchoringComponent
+　現実世界への固定（平面、画像、顔など）
+
+SynchronizationComponent
+　マルチユーザー同期

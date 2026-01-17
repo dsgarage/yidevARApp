@@ -1,0 +1,7 @@
+ARの活用例
+
+ゲーム：Pokémon GO、Minecraft Earth
+ショッピング：IKEA Place（家具配置シミュレーション）
+教育：3D解剖図、歴史的建造物の復元
+ナビゲーション：Google Maps ARナビ
+計測：iOSの「計測」アプリ

@@ -1,0 +1,46 @@
+digraph CoordinateSystem {
+    rankdir=TB;
+    node [fontname="Helvetica"];
+    graph [fontname="Helvetica", bgcolor="white", pad="0.5"];
+
+    // Title
+    title [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><FONT POINT-SIZE="18"><B>ARKitの座標系</B></FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // World coordinate
+    world [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#4299E1" COLOR="#2B6CB0">
+        <TR><TD><FONT COLOR="white" POINT-SIZE="14"><B>ワールド座標系</B></FONT></TD></TR>
+        <TR><TD><FONT COLOR="white" POINT-SIZE="10">World Coordinate</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#BEE3F8" POINT-SIZE="9">ARセッション開始時のデバイス位置が原点<BR/>Y軸: 上方向（重力の逆）<BR/>単位: メートル</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Camera coordinate
+    camera [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#48BB78" COLOR="#276749">
+        <TR><TD><FONT COLOR="white" POINT-SIZE="14"><B>カメラ座標系</B></FONT></TD></TR>
+        <TR><TD><FONT COLOR="white" POINT-SIZE="10">Camera Coordinate</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#C6F6D5" POINT-SIZE="9">デバイスのカメラが原点<BR/>Z軸: カメラの向き（負の方向が前）<BR/>リアルタイムで移動</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Local coordinate
+    local [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#9F7AEA" COLOR="#553C9A">
+        <TR><TD><FONT COLOR="white" POINT-SIZE="14"><B>ローカル座標系</B></FONT></TD></TR>
+        <TR><TD><FONT COLOR="white" POINT-SIZE="10">Local Coordinate</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#E9D8FD" POINT-SIZE="9">各Entityの中心が原点<BR/>親Entityからの相対位置<BR/>階層構造で変換</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Anchor coordinate
+    anchor [label=<<TABLE BORDER="2" CELLBORDER="0" CELLSPACING="0" CELLPADDING="15" BGCOLOR="#ED8936" COLOR="#C05621">
+        <TR><TD><FONT COLOR="white" POINT-SIZE="14"><B>アンカー座標系</B></FONT></TD></TR>
+        <TR><TD><FONT COLOR="white" POINT-SIZE="10">Anchor Coordinate</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#FEEBC8" POINT-SIZE="9">検出した平面/画像の中心が原点<BR/>現実世界に固定<BR/>ワールド座標内の位置を持つ</FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Layout and edges
+    title -> world [style=invis];
+    world -> camera [label=<<FONT POINT-SIZE="10">カメラの位置・向き<BR/>(transform)</FONT>>, color="#718096", penwidth=2];
+    world -> anchor [label=<<FONT POINT-SIZE="10">アンカーの位置<BR/>(transform)</FONT>>, color="#718096", penwidth=2];
+    anchor -> local [label=<<FONT POINT-SIZE="10">子Entityの位置<BR/>(position)</FONT>>, color="#718096", penwidth=2];
+
+    {rank=same; camera; anchor}
+}

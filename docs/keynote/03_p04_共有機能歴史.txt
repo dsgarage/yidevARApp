@@ -1,0 +1,13 @@
+ARKitの共有機能の歴史
+
+2018年 ARKit 2.0
+　ARWorldMapによる空間共有（手動同期）
+
+2019年 ARKit 3.0
+　Collaborative Session（自動協調）
+
+2020年 ARKit 4.0
+　ARGeoAnchor（位置情報アンカー）
+
+2021年〜 ARKit 5.0+
+　精度向上、安定性改善

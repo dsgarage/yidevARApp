@@ -1,0 +1,12 @@
+利用可能なフレームワーク
+
+ARKit
+　AppleのAR基盤（トラッキング、検出機能）
+
+RealityKit
+　高レベルフレームワーク（SwiftUI統合、物理演算）
+　→ 新規プロジェクトで推奨
+
+SceneKit
+　レガシー3Dフレームワーク（iOS 8〜）
+　visionOS非対応

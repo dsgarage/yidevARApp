@@ -1,0 +1,10 @@
+ARKit トラッキング機能
+
+平面検出
+　AnchorEntity(.plane(.horizontal)) - 水平面
+　AnchorEntity(.plane(.vertical)) - 垂直面
+　LiDAR搭載機では.floor/.wall/.table等の分類も可能
+
+画像トラッキング
+　ARImageTrackingConfiguration
+　最大100枚同時検出

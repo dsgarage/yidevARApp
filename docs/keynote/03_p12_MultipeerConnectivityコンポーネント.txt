@@ -1,0 +1,13 @@
+MultipeerConnectivity 基本コンポーネント
+
+MCPeerID
+　デバイスの識別子
+
+MCSession
+　通信セッションの管理
+
+MCNearbyServiceAdvertiser
+　自分のサービスを広告
+
+MCNearbyServiceBrowser
+　近くのサービスを検索

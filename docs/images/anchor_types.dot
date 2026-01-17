@@ -1,0 +1,53 @@
+digraph AnchorTypes {
+    rankdir=TB;
+    node [fontname="Helvetica"];
+    graph [fontname="Helvetica", bgcolor="white", pad="0.5"];
+
+    // Title
+    title [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">
+        <TR><TD><FONT POINT-SIZE="18"><B>AnchorEntityの種類と用途</B></FONT></TD></TR>
+    </TABLE>>, shape=none];
+
+    // Anchor types table
+    anchors [label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="12" BGCOLOR="white">
+            <TR>
+                <TD BGCOLOR="#4A5568" WIDTH="140"><FONT COLOR="white"><B>アンカータイプ</B></FONT></TD>
+                <TD BGCOLOR="#4A5568" WIDTH="200"><FONT COLOR="white"><B>説明</B></FONT></TD>
+                <TD BGCOLOR="#4A5568" WIDTH="180"><FONT COLOR="white"><B>主な用途</B></FONT></TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#BEE3F8"><B>.plane</B></TD>
+                <TD BGCOLOR="#EBF8FF">検出した平面に固定<BR/>水平/垂直を指定可能</TD>
+                <TD BGCOLOR="#EBF8FF">家具配置、ゲームフィールド</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#C6F6D5"><B>.image</B></TD>
+                <TD BGCOLOR="#F0FFF4">認識した画像に固定<BR/>ARReferenceImageを使用</TD>
+                <TD BGCOLOR="#F0FFF4">ポスター連動、商品認識</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#E9D8FD"><B>.face</B></TD>
+                <TD BGCOLOR="#FAF5FF">検出した顔に固定<BR/>TrueDepthカメラ必須</TD>
+                <TD BGCOLOR="#FAF5FF">フェイスフィルター、Memoji</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#FEEBC8"><B>.body</B></TD>
+                <TD BGCOLOR="#FFFAF0">検出した人体に固定<BR/>骨格トラッキング</TD>
+                <TD BGCOLOR="#FFFAF0">モーションキャプチャ</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#FED7E2"><B>.world</B></TD>
+                <TD BGCOLOR="#FFF5F7">ワールド座標の固定位置<BR/>transform指定</TD>
+                <TD BGCOLOR="#FFF5F7">固定オブジェクト配置</TD>
+            </TR>
+            <TR>
+                <TD BGCOLOR="#E2E8F0"><B>.camera</B></TD>
+                <TD BGCOLOR="#F7FAFC">カメラに追従<BR/>常にカメラ前方に表示</TD>
+                <TD BGCOLOR="#F7FAFC">HUD、常時表示UI</TD>
+            </TR>
+        </TABLE>
+    >, shape=none];
+
+    title -> anchors [style=invis];
+}

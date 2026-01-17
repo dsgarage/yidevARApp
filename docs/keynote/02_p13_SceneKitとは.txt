@@ -1,0 +1,13 @@
+SceneKitとは
+
+Appleの3Dフレームワーク（iOS 8〜）
+
+特徴：
+　ARKitとの統合（ARSCNView）
+　シーングラフ（階層構造）アーキテクチャ
+　豊富なドキュメント/サンプル
+　学習曲線が緩やか
+
+注意：
+　visionOS非対応
+　新規開発ではRealityKit推奨

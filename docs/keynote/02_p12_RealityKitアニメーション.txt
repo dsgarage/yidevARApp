@@ -1,0 +1,16 @@
+RealityKit アニメーション
+
+Transform Animation
+　entity.move(to:relativeTo:duration:)
+
+FromToByAnimation
+　開始、終了値指定
+
+OrbitAnimation
+　周回アニメーション
+
+Skeletal Animation
+　USDZに含まれるアニメーション
+
+Blend Shapes / Inverse Kinematics
+　RealityKit 4+で追加

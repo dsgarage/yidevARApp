@@ -1,0 +1,15 @@
+デバイス別機能（iPhone）
+
+【iPhone（非LiDAR）】
+　平面検出：○
+　Scene Geometry：×
+　深度API：×
+　顔トラッキング：○（TrueDepth）
+　People Occlusion：○（A12+）
+
+【iPhone Pro（LiDAR搭載）】
+　平面検出：○（高速）
+　Scene Geometry：○
+　深度API：○
+　Object Occlusion：○
+　Instant AR：○
